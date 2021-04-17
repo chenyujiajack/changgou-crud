@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.changgou.goods.mapper.BrandMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="brand" type="com.changgou.goods.pojo.Brand">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="image" property="image" />
+        <result column="letter" property="letter" />
+        <result column="seq" property="seq" />
+    </resultMap>
+
+    <select id="findAll" resultType="Brand">
+        select * from tb_brand
+    </select>
+
+    <select id="findById" resultType="Brand">
+        select * from tb_brand where id=#{id}
+    </select>
+
+    <insert id="insertSelective" parameterType="com.changgou.goods.pojo.Brand">
+        insert into tb_brand(id,name,image,letter,seq)
+        VALUES (#{id},#{name},#{image},#{letter},#{seq})
+    </insert>
+    
+    <delete id="deleteBrandById">
+        delete from tb_brand where id = #{id}
+    </delete>
+   <!-- Integer id, String name,String image, String letter, String seq-->
+    <update id="updateBrand">
+        update tb_brand set name =  #{name},image=#{image},letter=#{letter},seq=#{seq}
+       where id = #{id}
+    </update>
+
+
+</mapper>

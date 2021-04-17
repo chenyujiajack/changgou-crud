@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.changgou.goods.mapper.UserMapper">
+
+    <resultMap id="accountUserMap" type="">
+
+    </resultMap>
+   <!-- <select id="selectUserAccountList" resultType="com.changgou.goods.pojo.UserAccount">
+        select u.*,a.money
+        from
+        user u, account a where u.id=a.UID;
+    </select>-->
+
+    <select id="selectUserAccountList" resultType="com.changgou.goods.pojo.UserAccount">
+        select u.*,a.money
+        from
+        user u, account a where u.id=a.UID;
+    </select>
+
+</mapper>
